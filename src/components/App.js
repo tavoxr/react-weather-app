@@ -41,18 +41,18 @@ class App extends React.Component {
 
 
 
-    console.log(data);
+    console.log(this.state);
     
     this.setState({
       tempeture: data.main.temp,
       description: data.weather[0].description,
       humidity: data.main.humidity ,
       wind_speed: data.wind.speed,
-      city:data.main.name,
+      city:data.name,
       country: data.sys.country,
       error:null
 
-    })
+    }, ()=> console.log(this.state));
     
 
   }
@@ -65,7 +65,7 @@ class App extends React.Component {
         <div className='row'>
           <div className='col-md-5 mx-auto'>
               <WeatherForm getWeather={this.getWeather} />
-              <WeatherInfo/>
+              <WeatherInfo {...this.state} />
           </div>
         </div>
       </div>
