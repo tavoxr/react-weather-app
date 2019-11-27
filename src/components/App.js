@@ -31,8 +31,8 @@ class App extends React.Component {
     const celcius= 'units=metric';
     const fahrenheit='units=imperial';
 
-
-    const API_URL= `https://api.openweathermap.org/data/2.5/weather?q=${cityValue},${countryValue}&appid=${WEATHER_KEY}&${celcius}`;
+      if(cityValue&&countryValue){
+        const API_URL= `https://api.openweathermap.org/data/2.5/weather?q=${cityValue},${countryValue}&appid=${WEATHER_KEY}&${celcius}`;
 
     const response= await fetch(API_URL);
      const data= await response.json();
@@ -41,10 +41,10 @@ class App extends React.Component {
 
 
 
-    console.log(this.state);
+    // console.log(this.state);
     
     this.setState({
-      tempeture: data.main.temp,
+      temperature: data.main.temp,
       description: data.weather[0].description,
       humidity: data.main.humidity ,
       wind_speed: data.wind.speed,
@@ -52,7 +52,13 @@ class App extends React.Component {
       country: data.sys.country,
       error:null
 
-    }, ()=> console.log(this.state));
+    });
+    
+
+      }else{
+        this.setState({error: 'Please enter a city and a country'})
+      }
+
     
 
   }
