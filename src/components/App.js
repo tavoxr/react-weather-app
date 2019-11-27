@@ -2,6 +2,10 @@ import React from 'react';
 import WeatherInfo from './WeatherInfo';
 import WeatherForm from './WeatherForm';
 import {WEATHER_KEY} from '../keys';
+import Navbar from '../components/Navbar';
+
+
+
 class App extends React.Component {
 
   constructor(){
@@ -67,13 +71,17 @@ class App extends React.Component {
 
   render(){
     return (
+      <div className='container  mt-3 '>
+        <Navbar/>
       <div className='container p-4'>
+        
         <div className='row'>
-          <div className='col-md-5 mx-auto'>
+          <div className='col-md-5 mx-auto mt-4'>
               <WeatherForm getWeather={this.getWeather} />
               <WeatherInfo {...this.state} />
           </div>
         </div>
+      </div>
       </div>
     
     );

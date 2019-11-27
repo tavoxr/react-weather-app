@@ -6,13 +6,13 @@ return(
     
     <div>
         {props.error&&
-        <div className='alert alert-danger'>
+        <div className='alert alert-danger mt-3'>
             <p>{props.error}</p>
         </div>
         }
 
         {props.temperature ?
-         <div className='card card-body'>
+         <div className='card card-body mt-4'>
             <p>
                  Location: {props.city}, {props.country}
 
@@ -29,7 +29,7 @@ return(
          </div> 
      
         :
-        <div className='card card-body'>
+        <div className='card card-body mt-4'>
             <p>No request yet</p>
 
         </div>
