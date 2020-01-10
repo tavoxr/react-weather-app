@@ -12,7 +12,7 @@ return(
         }
 
         {props.temperature ?
-         <div className='card card-body mt-4'>
+         <div className='card card-body mt-4' id='info'>
             <p>
                  Location: {props.city}, {props.country}
 
