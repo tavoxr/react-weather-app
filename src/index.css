@@ -15,7 +15,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+/*HEADER----------*/
 .hero_container{
   background: rgb(244, 255, 247);
   border-radius: 6px;
@@ -79,4 +79,29 @@ align-items: center;
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+/*-------------------------------------MEDIA QUERIES---------------------*/
+
+
+  
+
+@media (max-width:500px){
+ 
+  .hero_container h1{
+    font-size: 2.5rem;
+    /* font-weight: bold; */
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+  }
+
+  #instruction{
+    display: none;
+    visibility: hidden;
+  }
+  
 }

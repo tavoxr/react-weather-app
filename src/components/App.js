@@ -95,7 +95,7 @@ class App extends React.Component {
       <div className='container p-4'>
         
         <div className='row'>
-          <div className='col-md-5 mx-auto mt-4'>
+          <div className='col-md-5 mx-auto mt-4 sas' id='formInfo_container'>
               <WeatherForm getWeather={this.getWeather} />
               {this.mostrarInfo()}
               
